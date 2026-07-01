@@ -1,0 +1,30 @@
+# robots.txt for credeneE
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Explicitly allow AI Search Engines and Generative Agents
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap Location
+Sitemap: https://credenee.com/sitemap.xml

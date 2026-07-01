@@ -41,32 +41,48 @@ const shouldInvert = (src) => {
   return darkLogos.some((term) => src.toLowerCase().includes(term));
 };
 
+const ICON_NAMES = {
+  "5968854.png": "Java Development",
+  "732221.png": "Microsoft Excel Sheets",
+  "733609.png": "GitHub Repository",
+  "732084.png": "CSS3 Styling",
+  "733585.png": "Slack Workspace Chat",
+  "281763.png": "Google Authentication",
+  "888879.png": "Figma Collaborative Design",
+  "174857.png": "LinkedIn Certification Sharing",
+  "906324.png": "Telegram Channel Messages",
+  "888841.png": "Google Chrome Extension",
+  "5968875.png": "Zoom Video Meetings",
+  "906361.png": "Notion Workspace Pages",
+  "732190.png": "Microsoft Word Document",
+  "888847.png": "Dropbox Cloud Storage"
+};
+
 export function IntegrationsSection() {
+  const getAltText = (src) => {
+    const filename = src.split("/").pop();
+    return `${ICON_NAMES[filename] || "Integration Logo"} Icon`;
+  };
+
   return (
     <section className="relative py-28 overflow-hidden bg-primary text-primary-foreground border-y border-primary-foreground/10">
       {/* Ambient decorative glow */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-white/5 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Content */}
-      <div className="relative max-w-6xl mx-auto px-6 text-center z-10 flex flex-col items-center gap-4">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 mb-2 text-[13px] font-mono font-bold tracking-wider rounded-full border border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground">
-          <Zap size={12} className="inline-block" /> APIs & INTEGRATIONS
-        </span>
-        <h2 className="text-4xl md:text-5xl text-primary-foreground font-extrabold tracking-tight leading-tight">
-          Explore our APIs & <br className="hidden sm:inline" />
-          <span className="text-white opacity-90">500+ Integrations</span>
-        </h2>
-        <p className="text-primary-foreground/80 text-sm sm:text-base max-w-[560px] leading-relaxed mt-2">
-          Effortlessly generate and send certificates with zero manual
-          intervention using the most trusted digital credential management
-          software.
-        </p>
-        <Button
-          variant="default"
-          className="mt-6 px-6 py-2.5 rounded-full bg-white hover:bg-white/90 text-primary font-bold transition shadow-md"
-        >
-          Get started
-        </Button>
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-emerald-300 dark:text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-500/10 dark:bg-emerald-400/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20 dark:border-emerald-400/25">
+            <Zap size={12} className="inline-block" /> APIs & INTEGRATIONS
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-6 mb-4 text-white">
+            Explore our APIs & <br className="hidden sm:inline" />
+            Integrations
+          </h2>
+          <p className="text-primary-foreground/80 text-sm md:text-base leading-relaxed">
+            Connect your LMS, CRM, or app directly to our secure issuance engine.
+          </p>
+        </div>
 
         {/* Carousel */}
         <div className="w-full mt-16 overflow-hidden relative pb-2 flex flex-col gap-6">
@@ -79,7 +95,8 @@ export function IntegrationsSection() {
               >
                 <img
                   src={src}
-                  alt="icon"
+                  alt={getAltText(src)}
+                  loading="lazy"
                   className={`h-10 w-10 object-contain ${shouldInvert(src) ? "dark:invert dark:brightness-200" : ""}`}
                 />
               </div>
@@ -95,7 +112,8 @@ export function IntegrationsSection() {
               >
                 <img
                   src={src}
-                  alt="icon"
+                  alt={getAltText(src)}
+                  loading="lazy"
                   className={`h-10 w-10 object-contain ${shouldInvert(src) ? "dark:invert dark:brightness-200" : ""}`}
                 />
               </div>

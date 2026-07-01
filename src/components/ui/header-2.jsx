@@ -49,6 +49,8 @@ export function Header() {
             <img
               src="/3.svg"
               alt="credeneE Logo"
+              width={24}
+              height={24}
               className="h-[18px] md:h-[24px] w-auto object-contain transition-all duration-300 dark:brightness-110"
             />
           </Link>

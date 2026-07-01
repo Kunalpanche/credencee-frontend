@@ -36,6 +36,9 @@ export function MinimalFooter() {
           <img
             src="/3.png"
             alt="CredeneE Icon"
+            width={192}
+            height={192}
+            loading="lazy"
             className="w-32 h-32 md:w-48 md:h-48 object-contain drop-shadow-md shrink-0"
           />
           {/* Text Logo */}

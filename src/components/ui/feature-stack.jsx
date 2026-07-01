@@ -167,6 +167,9 @@ function DesignPanel({ isActive }) {
             <img
               src="/3.png"
               alt="credeneE Logo"
+              width={16}
+              height={16}
+              loading="lazy"
               className="h-4 w-auto object-contain dark:brightness-110"
             />
             <div className="flex gap-1">
@@ -476,6 +479,9 @@ function SendPanel({ isActive }) {
             <img
               src="/3.png"
               alt="credeneE Logo"
+              width={16}
+              height={16}
+              loading="lazy"
               className="h-4 w-auto object-contain dark:brightness-110"
             />
             <span className="text-[11px] font-bold text-zinc-600 dark:text-zinc-300 transition-colors duration-300">
@@ -805,6 +811,9 @@ function VerifyPanel({ isActive }) {
                 <img
                   src="/3.png"
                   alt="credeneE verified logo"
+                  width={16}
+                  height={16}
+                  loading="lazy"
                   className="h-4 w-auto object-contain dark:brightness-110"
                 />
               </div>
@@ -1205,6 +1214,9 @@ export function FeatureStack() {
                 <img
                   src="/3.png"
                   alt="credeneE logo header"
+                  width={16}
+                  height={16}
+                  loading="lazy"
                   className="h-4 w-auto object-contain dark:brightness-110"
                 />
               </div>
@@ -1283,6 +1295,9 @@ export function FeatureStack() {
                   <img
                     src="/3.png"
                     alt="credeneE logo header mobile"
+                    width={14}
+                    height={14}
+                    loading="lazy"
                     className="h-3.5 w-auto object-contain dark:brightness-110"
                   />
                 </div>
