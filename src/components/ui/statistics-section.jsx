@@ -4,28 +4,28 @@ import React from "react";
 
 const stats = [
   {
-    title: "CREDENTIALS ISSUED",
-    value: "120K+",
+    title: "STUDENTS CERTIFIED",
+    value: "10,000+",
     description:
-      "Securing digital identities and achievements globally, one credential at a time.",
+      "Successfully certified students across educational programs and organizations.",
   },
   {
-    title: "SATISFIED ORGANIZATIONS",
-    value: "98%",
+    title: "VERIFICATION SPEED",
+    value: "Instant",
     description:
-      "Crafting infrastructure that meets and exceeds enterprise expectations.",
+      "Fast certificate verification via QR code and secure public links in under a second.",
   },
   {
-    title: "API UPTIME",
-    value: "99.9%",
+    title: "TAMPER-PROOF IDENTITY",
+    value: "100%",
     description:
-      "Refining our infrastructure to provide enterprise-grade reliability.",
+      "Secure digital credentials backed by advanced cryptographic signing technology.",
   },
   {
-    title: "ACTIVE VERIFIERS",
-    value: "4M+",
+    title: "ENTERPRISE INFRASTRUCTURE",
+    value: "99.99%",
     description:
-      "Empowering a growing network of verified professionals worldwide.",
+      "Trusted by educational institutions for robust, scalable, and tamper-proof credential issuance.",
   },
 ];
 

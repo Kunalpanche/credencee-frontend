@@ -1,4 +1,4 @@
-# robots.txt for credeneE
+# robots.txt for CredenceE
 
 User-agent: *
 Allow: /
@@ -27,4 +27,4 @@ User-agent: Applebot-Extended
 Allow: /
 
 # Sitemap Location
-Sitemap: https://credenee.com/sitemap.xml
+Sitemap: https://credencee.com/sitemap.xml

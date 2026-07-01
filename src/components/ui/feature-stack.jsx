@@ -162,11 +162,11 @@ function DesignPanel({ isActive }) {
           <div className="absolute inset-1 border border-zinc-200 dark:border-zinc-800 pointer-events-none rounded-lg transition-colors duration-300" />
           <div className="absolute inset-1.5 border border-dashed border-zinc-100 dark:border-zinc-800/40 pointer-events-none rounded-lg transition-colors duration-300" />
 
-          {/* Header with credeneE Logo */}
+          {/* Header with CredenceE Logo */}
           <div className="flex justify-between items-center z-10">
             <img
               src="/3.png"
-              alt="credeneE Logo"
+              alt="CredenceE Logo"
               width={16}
               height={16}
               loading="lazy"
@@ -228,7 +228,7 @@ function DesignPanel({ isActive }) {
                   transition={{ type: "spring", stiffness: 300 }}
                   className="text-[9px] font-serif italic text-zinc-700 dark:text-zinc-300 transition-colors duration-300 font-bold"
                 >
-                  credeneE
+                  CredenceE
                 </motion.span>
               ) : (
                 <span className="text-[6px] text-zinc-500 dark:text-zinc-400 font-mono transition-colors duration-300">
@@ -472,13 +472,13 @@ function SendPanel({ isActive }) {
 
   return (
     <div className="w-full h-full bg-zinc-50 dark:bg-zinc-950/10 p-4 flex flex-col justify-between text-zinc-800 dark:text-zinc-200 select-none font-sans overflow-hidden relative transition-colors duration-300">
-      {/* Composer header with credeneE Logo */}
+      {/* Composer header with CredenceE Logo */}
       <div className="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm p-4 flex flex-col gap-2 transition-colors duration-300">
         <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 pb-2 transition-colors duration-300">
           <div className="flex items-center gap-2">
             <img
               src="/3.png"
-              alt="credeneE Logo"
+              alt="CredenceE Logo"
               width={16}
               height={16}
               loading="lazy"
@@ -499,7 +499,7 @@ function SendPanel({ isActive }) {
               From:
             </span>
             <span className="text-zinc-700 dark:text-zinc-300 transition-colors duration-300">
-              delivery@credenee.com
+              delivery@credencee.com
             </span>
           </div>
           <div className="flex border-b border-zinc-100 dark:border-zinc-800/50 py-1 transition-colors duration-300">
@@ -645,7 +645,7 @@ function SharePanel({ isActive }) {
 
         <p className="text-[9px] text-zinc-600 dark:text-zinc-300 leading-tight transition-colors duration-300">
           Stoked to receive my verified Certificate of Leadership from
-          credeneE! Verifiable, safe, and easily sharable.
+          CredenceE! Verifiable, safe, and easily sharable.
         </p>
 
         {/* Certificate preview */}
@@ -655,7 +655,7 @@ function SharePanel({ isActive }) {
               Certificate of Leadership
             </span>
             <span className="text-[7px] text-zinc-500 dark:text-zinc-400 transition-colors duration-300">
-              Issued by Acme Corp & credeneE
+              Issued by Acme Corp & CredenceE
             </span>
           </div>
           <Linkedin size={18} className="text-[#0a66c2]" />
@@ -790,7 +790,7 @@ function VerifyPanel({ isActive }) {
         </div>
       </div>
 
-      {/* Verification status output card with credeneE Logo */}
+      {/* Verification status output card with CredenceE Logo */}
       <div className="flex-1 flex items-center justify-center my-4">
         <AnimatePresence>
           {verified && (
@@ -810,7 +810,7 @@ function VerifyPanel({ isActive }) {
                 </div>
                 <img
                   src="/3.png"
-                  alt="credeneE verified logo"
+                  alt="CredenceE verified logo"
                   width={16}
                   height={16}
                   loading="lazy"
@@ -832,7 +832,7 @@ function VerifyPanel({ isActive }) {
                     Issuer
                   </span>
                   <span className="font-bold text-zinc-800 dark:text-zinc-200 transition-colors duration-300">
-                    credeneE Trust
+                    CredenceE Trust
                   </span>
                 </div>
                 <div>
@@ -1149,7 +1149,7 @@ export function FeatureStack() {
             The complete certification management platform
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl leading-relaxed transition-colors duration-300">
-            credeneE helps you manage and automate every step of the digital
+            CredenceE helps you manage and automate every step of the digital
             credential journey.
           </p>
         </motion.div>
@@ -1209,11 +1209,11 @@ export function FeatureStack() {
                   <span className="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700" />
                 </div>
                 <span className="text-[10px] text-zinc-500 dark:text-zinc-400 font-mono select-none font-medium">
-                  app.credenee.com
+                  app.credencee.com
                 </span>
                 <img
                   src="/3.png"
-                  alt="credeneE logo header"
+                  alt="CredenceE logo header"
                   width={16}
                   height={16}
                   loading="lazy"
@@ -1260,7 +1260,7 @@ export function FeatureStack() {
             The complete certification management platform
           </h2>
           <p className="text-muted-foreground text-sm leading-relaxed transition-colors duration-300">
-            credeneE helps you manage and automate every step of the digital
+            CredenceE helps you manage and automate every step of the digital
             credential journey.
           </p>
         </motion.div>
@@ -1281,7 +1281,7 @@ export function FeatureStack() {
               </div>
 
               {/* Showcase Card */}
-              <div className="relative w-full aspect-[4/3] bg-white dark:bg-zinc-900 rounded-2xl shadow-lg border border-zinc-200/80 dark:border-zinc-800 overflow-hidden transition-colors duration-300 flex flex-col">
+              <div className="relative w-full h-[360px] xs:h-[385px] sm:h-[430px] bg-white dark:bg-zinc-900 rounded-2xl shadow-lg border border-zinc-200/80 dark:border-zinc-800 overflow-hidden transition-colors duration-300 flex flex-col">
                 {/* Mobile Browser Header Bar */}
                 <div className="w-full h-7 bg-zinc-50 dark:bg-zinc-950 border-b border-zinc-200/60 dark:border-zinc-800/80 flex items-center justify-between px-3 shrink-0 transition-colors duration-300">
                   <div className="flex gap-1">
@@ -1290,11 +1290,11 @@ export function FeatureStack() {
                     <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700" />
                   </div>
                   <span className="text-[9px] text-zinc-500 dark:text-zinc-400 font-mono select-none">
-                    app.credenee.com
+                    app.credencee.com
                   </span>
                   <img
                     src="/3.png"
-                    alt="credeneE logo header mobile"
+                    alt="CredenceE logo header mobile"
                     width={14}
                     height={14}
                     loading="lazy"

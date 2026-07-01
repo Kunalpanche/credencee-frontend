@@ -99,11 +99,32 @@ export function Hero195() {
   const mouseRef = useRef({ x: 0, y: 0 });
   const targetMouseRef = useRef({ x: 0, y: 0 });
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
     if (email) {
       setSubscribed(true);
-      setEmail("");
+      try {
+        await fetch("https://formsubmit.co/ajax/contact@credencee.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            email: email,
+            _subject: "New Staging Lead Inquiry - CredenceE",
+            message: `A prospective client has requested to get in touch from the CredenceE staging platform.\n\nClient Email: ${email}`
+          })
+        });
+      } catch (err) {
+        console.error("Functional email dispatch failed:", err);
+      }
+      
+      // Reset the success state alert after a few seconds
+      setTimeout(() => {
+        setSubscribed(false);
+        setEmail("");
+      }, 5000);
     }
   };
 
@@ -277,9 +298,9 @@ export function Hero195() {
         const y =
           canvas.height / 2 +
           Math.sin(x * wave.frequency + time * 0.002 + wave.offset) *
-            wave.amplitude +
+          wave.amplitude +
           Math.sin(x * wave.frequency * 0.4 + time * 0.003) *
-            (wave.amplitude * 0.45) +
+          (wave.amplitude * 0.45) +
           mouseEffect;
 
         if (x === 0) {
@@ -358,92 +379,92 @@ export function Hero195() {
           animate="visible"
           className="max-w-4xl mx-auto px-6 flex flex-col items-center text-center gap-6 pt-8 w-full"
         >
-            {/* Tagline */}
-            <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/5 text-primary text-[13px] font-semibold uppercase tracking-wider border border-primary/20 bg-background/60 backdrop-blur"
-            >
-              <Shield size={12} className="text-primary animate-pulse" />
-              <span>Modern Credential Infrastructure</span>
-            </motion.div>
-
-            {/* Main Headline */}
-            <motion.h1
-              variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-foreground leading-[1.15] max-w-3xl"
-            >
-              Credentials of{" "}
-              <span
-                className="bg-gradient-to-r from-emerald-600 to-black dark:from-emerald-400 dark:to-white bg-clip-text text-transparent px-2 inline-block select-text transition-all duration-75"
-                style={{
-                  fontFamily: "'Orbit', sans-serif",
-                  textShadow: isGlitching
-                    ? "2px -1px 0 #00ff00, -2px 1px 0 #0000ff"
-                    : "none",
-                  animation: isGlitching
-                    ? "glitch-flicker 0.15s infinite"
-                    : "none",
-                }}
-              >
-                {currentText}
-              </span>{" "}
-              unleashed
-            </motion.h1>
-
-            {/* Description */}
-            <motion.p
-              variants={itemVariants}
-              className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed"
-            >
-              Turn your certificates and digital badges into your most powerful
-              brand advocates. Create, verify, and programmatically issue secure
-              digital credentials in minutes.
-            </motion.p>
-
-            {/* Email Signup Form (Calio layout, pill-shaped) */}
-            <motion.div
-              variants={itemVariants}
-              className="w-full max-w-md mt-4"
-            >
-              <form
-                onSubmit={handleSubscribe}
-                className="w-full flex gap-2 p-1.5 bg-card/60 dark:bg-zinc-900/60 backdrop-blur-xl border border-border/80 rounded-full shadow-lg focus-within:ring-2 focus-within:ring-primary/20 transition-all"
-              >
-                <div className="flex-1 flex flex-col items-start gap-1">
-                  <Label htmlFor="email" className="sr-only">
-                    Email Address
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    required
-                    placeholder="Enter organization email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-transparent border-0 shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 px-4 py-2.5 rounded-full text-[13px] sm:text-sm text-foreground placeholder:text-muted-foreground/60 h-10"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="rounded-full px-6 h-10 bg-primary text-primary-foreground hover:bg-primary/95 flex items-center gap-1.5 shrink-0 transition-all shadow-md"
-                >
-                  {subscribed ? "Subscribed" : "Create Link"}{" "}
-                  <ArrowRightCircle size={14} />
-                </Button>
-              </form>
-
-              {subscribed ? (
-                <p className="text-[13px] text-emerald-500 font-medium flex items-center gap-1 justify-center mt-2">
-                  <CheckCircle size={12} /> Invite link has been dispatched to
-                  your email!
-                </p>
-              ) : (
-                <p className="text-[13px] text-muted-foreground mt-2 tracking-wide font-mono uppercase">
-                  7-day free trial. No credit card required. Cancel anytime.
-                </p>
-              )}
-            </motion.div>
+          {/* Tagline */}
+          <motion.div
+            variants={itemVariants}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/5 text-primary text-[13px] font-semibold uppercase tracking-wider border border-primary/20 bg-background/60 backdrop-blur"
+          >
+            <Shield size={12} className="text-primary animate-pulse" />
+            <span>Modern Credential Infrastructure</span>
           </motion.div>
+
+          {/* Main Headline */}
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-foreground leading-[1.15] max-w-3xl"
+          >
+            Credentials of{" "}
+            <span
+              className="bg-gradient-to-r from-emerald-600 to-black dark:from-emerald-400 dark:to-white bg-clip-text text-transparent px-2 inline-block select-text transition-all duration-75"
+              style={{
+                fontFamily: "'Orbit', sans-serif",
+                textShadow: isGlitching
+                  ? "2px -1px 0 #00ff00, -2px 1px 0 #0000ff"
+                  : "none",
+                animation: isGlitching
+                  ? "glitch-flicker 0.15s infinite"
+                  : "none",
+              }}
+            >
+              {currentText}
+            </span>{" "}
+            unleashed
+          </motion.h1>
+
+          {/* Description */}
+          <motion.p
+            variants={itemVariants}
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed"
+          >
+            Turn your certificates and digital badges into your most powerful
+            brand advocates. Create, verify, and programmatically issue secure
+            digital credentials in minutes.
+          </motion.p>
+
+          {/* Email Signup Form (Calio layout, pill-shaped) */}
+          <motion.div
+            id="contact-form"
+            variants={itemVariants}
+            className="w-full max-w-md mt-4"
+          >
+            <form
+              onSubmit={handleSubscribe}
+              className="w-full flex gap-2 p-1.5 bg-card/60 dark:bg-zinc-900/60 backdrop-blur-xl border border-border/80 rounded-full shadow-lg focus-within:ring-2 focus-within:ring-primary/20 transition-all"
+            >
+              <div className="flex-1 flex flex-col items-start gap-1">
+                <Label htmlFor="email" className="sr-only">
+                  Email Address
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  placeholder="Enter organization email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full bg-transparent border-0 shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 px-4 py-2.5 rounded-full text-[13px] sm:text-sm text-foreground placeholder:text-muted-foreground/60 h-10"
+                />
+              </div>
+              <Button
+                type="submit"
+                className="rounded-full px-6 h-10 bg-primary text-primary-foreground hover:bg-primary/95 flex items-center gap-1.5 shrink-0 transition-all shadow-md font-semibold text-sm"
+              >
+                {subscribed ? "Sending..." : "Get in Touch"}{" "}
+                <ArrowRightCircle size={14} />
+              </Button>
+            </form>
+
+            {subscribed ? (
+              <p className="text-[13px] text-emerald-500 font-medium flex items-center gap-1 justify-center mt-2 animate-pulse">
+                <CheckCircle size={12} /> Inquiry sent successfully to contact@credencee.com!
+              </p>
+            ) : (
+              <p className="text-[13px] text-muted-foreground mt-2 tracking-wide font-mono uppercase">
+                Trusted by 10,000+ certified students & institutions.
+              </p>
+            )}
+          </motion.div>
+        </motion.div>
       </main>
     </div>
   );

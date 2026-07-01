@@ -16,6 +16,15 @@ export function Header() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const handleScrollToContact = (e) => {
+    e.preventDefault();
+    setOpen(false);
+    const element = document.getElementById("contact-form");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
   const links = [
     { label: "Home", href: "/#" },
     { label: "Features", href: "/#features" },
@@ -48,7 +57,7 @@ export function Header() {
           <Link to="/" className="flex items-center gap-2.5">
             <img
               src="/3.svg"
-              alt="credeneE Logo"
+              alt="CredenceE Logo"
               width={24}
               height={24}
               className="h-[18px] md:h-[24px] w-auto object-contain transition-all duration-300 dark:brightness-110"
@@ -76,6 +85,8 @@ export function Header() {
 
         {/* Right Column: Actions */}
         <div className="hidden md:flex items-center gap-4">
+          {/* Sign In and Try for free are hidden for staging launch */}
+          {/*
           <Link
             to="/login"
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
@@ -96,6 +107,14 @@ export function Header() {
           >
             Try for free
           </Link>
+          */}
+
+          <Button
+            onClick={handleScrollToContact}
+            className="bg-emerald-600 hover:bg-emerald-700 text-white dark:bg-white dark:hover:bg-zinc-100 dark:text-zinc-950 text-sm font-semibold rounded-lg px-4 py-2 transition-colors duration-200"
+          >
+            Get in Touch
+          </Button>
 
           {/* Simple Rounded Theme Toggle Button */}
           <Button
@@ -174,6 +193,8 @@ export function Header() {
 
           {/* Action CTAs at bottom */}
           <div className="flex flex-col gap-3">
+            {/* Auth pathways commented out for staging launch */}
+            {/*
             <Link
               to="/login"
               onClick={() => setOpen(false)}
@@ -189,6 +210,13 @@ export function Header() {
             >
               Try for free
             </Link>
+            */}
+            <Button
+              onClick={handleScrollToContact}
+              className="w-full py-3 text-center bg-emerald-600 dark:bg-white text-white dark:text-zinc-950 rounded-xl text-sm font-bold shadow-md shadow-emerald-500/10 transition-colors duration-200"
+            >
+              Get in Touch
+            </Button>
           </div>
         </div>
       </div>

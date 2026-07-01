@@ -8,6 +8,14 @@ import { ArrowRight } from "lucide-react";
 export function MinimalFooter() {
   const year = new Date().getFullYear();
 
+  const handleScrollToContact = (e) => {
+    e.preventDefault();
+    const element = document.getElementById("contact-form");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
   return (
     <footer className="w-full bg-card font-sans overflow-hidden border-t border-x border-border rounded-t-[32px] md:rounded-t-[48px] relative">
       {/* Primary color gradient glow effect at the top */}
@@ -18,15 +26,16 @@ export function MinimalFooter() {
         {/* Top Row */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
-            Get started today
+            Get in touch today
           </h2>
           <div className="flex items-center gap-2">
-            <Link to="/login">
-              <Button className="font-medium px-6 py-3 h-auto rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center gap-2">
-                Get Started
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
+            <Button
+              onClick={handleScrollToContact}
+              className="font-medium px-6 py-3 h-auto rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center gap-2 cursor-pointer"
+            >
+              Get in Touch
+              <ArrowRight className="h-4 w-4" />
+            </Button>
           </div>
         </div>
 
@@ -35,7 +44,7 @@ export function MinimalFooter() {
           {/* Logo Icon */}
           <img
             src="/3.png"
-            alt="CredeneE Icon"
+            alt="CredenceE Icon"
             width={192}
             height={192}
             loading="lazy"
@@ -51,7 +60,7 @@ export function MinimalFooter() {
         <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-6 text-sm text-muted-foreground w-full max-w-5xl">
           <div className="max-w-xs">
             <h4 className="text-foreground font-medium text-base mb-4">
-              Get started with smarter, safer
+              Get in touch for smarter, safer
               <br />
               credential operations.
             </h4>
@@ -67,10 +76,10 @@ export function MinimalFooter() {
               MH, INDIA
             </p>
             <a
-              href="mailto:connect@credencee.com"
+              href="mailto:contact@credencee.com"
               className="text-foreground hover:text-primary transition-colors font-medium text-sm"
             >
-              connect@credencee.com
+              contact@credencee.com
             </a>
           </div>
 
@@ -118,7 +127,7 @@ export function MinimalFooter() {
         <div className="flex flex-col w-full gap-6">
           {/* Bottom Row */}
           <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-muted-foreground">
-            <p>© {year} CredeneE. All Rights Reserved by Traillx.</p>
+            <p>© {year} CredenceE. All Rights Reserved by Traillx.</p>
             <p>
               Crafted by{" "}
               <a

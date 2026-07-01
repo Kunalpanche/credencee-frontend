@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 
 export function PricingSection() {
+  const handleScrollToContact = (e) => {
+    e.preventDefault();
+    const element = document.getElementById("contact-form");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
   return (
     <section id="pricing" className="w-full bg-transparent py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-6 w-full">
@@ -51,12 +59,12 @@ export function PricingSection() {
                 </li>
               </ul>
             </div>
-            <Link
-              to="/login?mode=signup"
-              className="mt-8 block text-center text-[14px] font-medium text-foreground hover:underline"
+            <button
+              onClick={handleScrollToContact}
+              className="mt-8 block w-full text-center text-[14px] font-medium text-foreground hover:underline cursor-pointer bg-transparent border-0"
             >
-              Get started →
-            </Link>
+              Get in Touch →
+            </button>
           </div>
 
           {/* Growth Plan - Highlighted with primary border */}
@@ -97,12 +105,12 @@ export function PricingSection() {
                 </li>
               </ul>
             </div>
-            <Link
-              to="/login?mode=signup"
-              className="mt-8 w-full bg-primary hover:bg-primary/90 text-primary-foreground text-center font-bold py-3 rounded-full transition-all shadow-md"
+            <button
+              onClick={handleScrollToContact}
+              className="mt-8 w-full bg-primary hover:bg-primary/90 text-primary-foreground text-center font-bold py-3 rounded-full transition-all shadow-md cursor-pointer"
             >
-              Choose Growth
-            </Link>
+              Get in Touch
+            </button>
           </div>
 
           {/* Enterprise Plan */}
@@ -137,12 +145,12 @@ export function PricingSection() {
                 </li>
               </ul>
             </div>
-            <Link
-              to="/login?mode=signup"
-              className="mt-8 block text-center text-[14px] font-medium text-foreground hover:underline"
+            <button
+              onClick={handleScrollToContact}
+              className="mt-8 block w-full text-center text-[14px] font-medium text-foreground hover:underline cursor-pointer bg-transparent border-0"
             >
-              Contact sales →
-            </Link>
+              Get in Touch →
+            </button>
           </div>
         </div>
       </div>
